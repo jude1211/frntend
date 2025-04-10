@@ -13,14 +13,15 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
-  const API_URL = 'http://localhost:5000/api'
+  const API_URL = 'http://localhost:3000/api'
 
   // Configure axios defaults
   const axiosInstance = axios.create({
     baseURL: API_URL,
     headers: {
       'Content-Type': 'application/json'
-    }
+    },
+    timeout: 5000 // 5 second timeout
   });
 
   useEffect(() => {
@@ -35,7 +36,11 @@ function App() {
       setError('')
     } catch (error) {
       console.error('Error fetching todos:', error)
-      setError('Failed to load todos')
+      if (error.code === 'ERR_NETWORK') {
+        setError('Unable to connect to the server. Please check if the server is running.')
+      } else {
+        setError('Failed to load todos')
+      }
     } finally {
       setLoading(false)
     }
