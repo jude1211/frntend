@@ -1,0 +1,169 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 0;
+  background-color: var(--light-color);
+}
+
+.todo-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-color);
+  width: 100%;
+}
+
+.todo-form {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.todo-input-group {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out;
+  width: 100%;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.todo-item {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.todo-text {
+  flex: 1;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-form {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--light-color);
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+.edit-form input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.375rem;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-buttons button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-buttons .btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-buttons .btn-success:hover {
+  background-color: #218838;
+}
+
+.edit-buttons .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.edit-buttons .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: var(--secondary-color);
+  width: 100%;
+}
+
+.error-message {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  background-color: var(--danger-color);
+  border-radius: 0.375rem;
+  text-align: center;
+  width: 100%;
+} 
